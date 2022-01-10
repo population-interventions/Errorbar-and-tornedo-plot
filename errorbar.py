@@ -51,7 +51,7 @@ x = np.array([
     0.05,
 ])
 
-#SD for error bars - preprosess the SDs - before putting in here SE = (upper limit – lower limit) / 3.92# 
+#SD for error bars - preprocess the SDs - before putting in here, SE = (upper limit – lower limit) / 3.92# 
 dy = np.array([
 1.93877551,
 0.816326531,
