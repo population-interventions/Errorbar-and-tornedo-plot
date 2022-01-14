@@ -43,7 +43,7 @@ x = np.array([
     3.6,
     2.95,
     2.0,
-    1.95,
+    1.26,
     1.2,
     0.15,
     0.05,
@@ -59,7 +59,7 @@ dy = np.array([
 1.479591837,
 1.326530612,
 1.683673469,
-1.173469388,
+0.33,
 0.637755102,
 0.076530612,
 0.010204082,
@@ -67,8 +67,8 @@ dy = np.array([
 0.010204082,
 ])
 
-plt.errorbar(x, y, xerr=dy, fmt='s', color='g',
-             ecolor='g', elinewidth=2, capsize=3);
+plt.errorbar(x, y, xerr=dy, fmt='s', color='black',
+             ecolor='black', elinewidth=2, capsize=3);
 plt.yticks(y,values);
 plt.grid(False);
 plt.xlabel('HALYs (+high and low UI)')
