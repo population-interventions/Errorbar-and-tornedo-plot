@@ -3,19 +3,27 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-    'Total temperature shift (ranging from 1.1 to 5.1 degree Celsius)',
-    'Total exposure to cold housing (ranging from 1/6th to 1/2th)',
-    'Relative shift of high blood pressure from exposure to indoor cold (from 0.23 to 0.90 mmHg)',
-    'Relative risk ratio of temperature onto COPD, LRTI, depression and anxiety (ranging from 1.025 to 1. 30)',
+    'Change in input paramter 1 (ranging % to % increase)',
+    'Change in input paramter 2 (ranging % to % increase)',
+    'Change in input paramter 3 (ranging % to % increase)',
+    'Change in input paramter 4 (ranging % to % increase)',
+    'Change in input paramter 5 (ranging % to % increase)',
+    'Change in input paramter 6 (ranging % to % increase)',
+    'Change in input paramter 7 (ranging % to % increase)',
+    'Change in input paramter 8 (ranging % to % increase)',
 ]
 
-base = 20700 
+base = 3000
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
     base - 1633 / 2,
     base - 500 / 2,
     base - 246 / 2,
     base - 150 / 2,
+    base - 43 / 2,
+    base - 37 / 2,
+    base - 36 / 2,
+    base - 35 / 2,
 ])
 
 values = np.array([
@@ -23,6 +31,10 @@ values = np.array([
     500,
     246,
     150,
+    43,
+    37,
+    36,
+    35,
 ])
 
 # The y position for each variable
