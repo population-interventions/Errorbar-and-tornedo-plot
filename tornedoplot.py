@@ -3,26 +3,29 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-    'Total temperature shift (ranging from 1.1 to 5.1 degree Celsius)',
+    'Relative difference in prevalence of cold housing in most deprived vs least deprived (1 c.f. 5) (ranging from 1.185 to 1.5)',
+    'Average temperature in cold housing (ranging from 15.22 to 16.78 degree Celsius) (see methods text in the paper)',
     'Total exposure to cold housing (ranging from 1/6th to 1/2th)',
+    'Relative risk ratio of temperature onto depression and anxiety (from 1.009 to 1.218)',
     'Relative shift of high blood pressure from exposure to indoor cold (from 0.23 to 0.90 mmHg)',
-    'Relative risk ratio of temperature onto COPD, LRTI, depression and anxiety (ranging from 1.025 to 1. 30)',
 ]
 
-base = 20700 
+base = 3.100560366 
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base - 1633 / 2,
-    base - 500 / 2,
-    base - 246 / 2,
-    base - 150 / 2,
+    base - 1.966246756/ 2,
+    base - 3.088360813/ 2,
+    base - 3.084411813/ 2,
+    base - 7.750298943/ 2,
+    base - 3.079248254/ 2,
 ])
 
 values = np.array([
-    1633,
-    500,
-    246,
-    150,
+5.010249208,
+3.112323635,
+3.10900483,
+2.809630641,
+3.111757998,
 ])
 
 # The y position for each variable
@@ -61,7 +64,7 @@ axes.xaxis.set_ticks_position('top')
 plt.yticks(ys, variables)
 
 # Set the portion of the x- and y-axes to show
-plt.xlim(base - 1000, base + 1000)
+plt.xlim(base - 10, base + 10)
 plt.ylim(-1, len(variables))
 
 # add a legend
