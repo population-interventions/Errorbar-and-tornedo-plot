@@ -16,7 +16,7 @@ lows = np.array([
     base - 1.966246756/ 2,
     base - 3.088360813/ 2,
     base - 3.084411813/ 2,
-    base - 7.750298943/ 2,
+    base - 2.809630641/ 2,
     base - 3.079248254/ 2,
 ])
 
@@ -24,9 +24,11 @@ values = np.array([
 5.010249208,
 3.112323635,
 3.10900483,
-2.809630641,
+7.750298943,
 3.111757998,
 ])
+
+values = np.subtract(values, lows)
 
 # The y position for each variable
 ys = range(len(values))[::-1]  # top to bottom
@@ -34,12 +36,12 @@ ys = range(len(values))[::-1]  # top to bottom
 # Plot the bars, one by one
 for y, low, value in zip(ys, lows, values):
     # The width of the 'low' and 'high' pieces
-    low_width = base - low
+    low_width = base - low*2
     high_width = low + value - base
 
     # Each bar is a "broken" horizontal bar chart
     plt.broken_barh(
-        [(low, low_width), (base, high_width)],
+        [(base, low_width), (base, high_width)],
         (y - 0.4, 0.8),
         facecolors=['red', 'green'],  # Try different colors if you like
         edgecolors=['black', 'black'],
