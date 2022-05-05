@@ -3,28 +3,34 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
+    'Relative risk ratio of temperature onto COPD and \n LRTI (from 1.020 to 1.030)',
+    'Incidence rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
+    'Relative risk ratio of systolic blood pressure (10 mmHg) onto \n CVD (2.5th to 97.5th percentiles for each RR)',
+    'Cold housing by quintile of deprivation \n (ranging from 1.185 to 1.5)',
+    'Shift of blood pressure from exposure \n to indoor cold (from 0.23 to 0.90 mmHg)',
+    'Total exposure to cold housing (ranging from \n 1/6th to 1/2th of time)',
     'Average temperature in cold housing (ranging from \n 16.18 to 13.82 degree Celsius) (see methods text in the paper)',
-    'Total exposure to cold housing (ranging from 1/6th to 1/2th)',
-    'Relative shift of high blood pressure from exposure \n to indoor cold (from 0.23 to 0.90 mmHg)',
-    'Relative difference in prevalence of cold housing in \n most deprived vs least deprived (1 c.f. 5) (ranging from 1.185 to 1.5)',
-    'Relative risk ratio of temperature onto depression and \n anxiety (from 1.009 to 1.218)',
 ]
 
 base = 3.203570219 
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base -	3.196264212	/2,
-    base -	3.144619245	/2,
-    base -	3.13830336	/2,
-    base -	2.006408193	/2,
+    base -	2.922676825	/2,
     base -	2.747987919	/2,
+    base -	2.435186389	/2,
+    base -	2.006408193	/2,
+    base -	3.13830336	/2,
+    base -	3.144619245	/2,
+    base -	3.196264212	/2,
 ])
 values = np.array([
-    3.210052374,
-    3.22402246,
-    3.231781818,
-    5.11234184,
+    9.35559218,
     8.331144113,
+    4.075058852,
+    5.11234184,
+    3.231781818,
+    3.22402246,
+    3.210052374,
 ])
 
 values = np.subtract(values, lows)
@@ -65,18 +71,18 @@ axes.xaxis.set_ticks_position('top')
 plt.yticks(ys, variables)
 
 # Set the portion of the x- and y-axes to show
-plt.xlim(base - 3, base + 5)
+plt.xlim(base - 3, base + 6)
 plt.ylim(-1, len(variables))
 
 # add a legend
 import textwrap as wrap
 
-plt.plot(x, y, label="Incremental HALYs gain for 2.5th percentile of input parameter", c='red', linewidth=2.0)
+plt.plot(x, y, label="Relative risk comparing HALYs between SES1 and SES5 for 2.5th percentile of input parameter", c='red', linewidth=2.0)
 leg = plt.legend(loc='best', bbox_to_anchor=(1.1, 0), fontsize='small', fancybox=True, framealpha=0, shadow=True, borderpad=1)
 for text in leg.get_texts():
     text.set_color("black")
 
-plt.plot(x, y, label="Incremental HALYs gain for 97.5th percentile of input parameter", c='Green', linewidth=2.0)
+plt.plot(x, y, label="Relative risk comparing HALYs between SES1 and SES5 for 97.5th percentile of input parameter", c='Green', linewidth=2.0)
 leg = plt.legend(loc='best', bbox_to_anchor=(1.1, 0), fontsize='small', fancybox=True, framealpha=0, shadow=True, borderpad=1)
 for text in leg.get_texts():
     text.set_color("black")

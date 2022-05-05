@@ -43,7 +43,7 @@ x = np.array([
     3.6,
     2.95,
     2.0,
-    2.26,
+    3.52,
     1.2,
     0.15,
     0.05,
@@ -59,7 +59,7 @@ dy = np.array([[
     1.479591837,
     1.326530612,
     1.683673469,
-    1.60,
+    1.14,
     0.637755102,
     0.076530612,
     0.010204082,
@@ -73,7 +73,7 @@ dy = np.array([[
     1.479591837,
     1.326530612,
     1.683673469,
-    6.37,
+    11.03,
     0.637755102,
     0.076530612,
     0.010204082,
@@ -88,4 +88,6 @@ plt.errorbar(x, y, xerr=dy, fmt='s', color='black',
 plt.yticks(y,values);
 plt.grid(False);
 plt.xlabel('HALYs (+high and low UI)')
+imgpath='.\test.png'
 plt.show()
+plt.savefig('errorplot.png', dpi=300)
