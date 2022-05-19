@@ -4,33 +4,33 @@ from matplotlib import pyplot as plt
 # Change this to your actual data
 variables = [
 'Incidence rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
-'Relative risk ratio of temperature onto COPD and \n LRTI (range 1.009 to 1.218)',
 'Average temperature in cold housing (ranging from \n 16.18 to 13.82 degree Celsius)',
+'Relative risk ratio of temperature onto COPD and \n LRTI (range 1.009 to 1.218)',
 'Cold housing by quintile of deprivation \n (ranging from 1.185 to 1.5)',
 'Relative risk ratio of systolic blood pressure (10 mmHg) onto \n CVD (2.5th to 97.5th percentiles for each RR*)',
 'Shift of blood pressure from exposure \n to indoor cold (from 0.23 to 0.90 mmHg)',
 'Total exposure to cold housing (ranging from \n 1/6th to 1/2th of time)',
 ]
 
-base = 36.300
+base = 40.000
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base -	3.480/2,
-    base -	3.350/2,
-    base -	21.500/2,
-    base -	24.900/2,
-    base -	36.000/2,
-    base -	35.700/2,
-    base -	35.700/2,
+    base -	7.360/2,
+    base -	22.700/2,
+    base -	27.900/2,
+    base -	39.400/2,
+    base -	39.200/2,
+    base -	39.100/2,
+    base -	39.300/2,
 ])
 values = np.array([
-    211.000,
-    210.000,
-    52.000,
-    59.135, #taken the average of lower and upper bound to correct for the error, ie. upper bound should be greater than the 'INT' value#
-    37.000,
-    36.900,
-    36.700,
+    194.000,
+    59.500,
+    59.300,
+    41.700,
+    40.100,
+    41.000,
+    40.800,
 ])
 
 values = np.subtract(values, lows)

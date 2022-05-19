@@ -3,34 +3,35 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-    'Incidence rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
-    'Cold housing by quintile of deprivation \n (ranging from 1.185 to 1.5)',
-    'Relative risk ratio of temperature onto COPD and \n LRTI (range 1.009 to 1.218)*',
-    'Average temperature in cold housing (ranging from \n 16.18 to 13.82 degree Celsius)',
-    'Shift of blood pressure from exposure \n to indoor cold (from 0.23 to 0.90 mmHg)',
-    'Total exposure to cold housing (ranging from \n 1/6th to 1/2th of time)',
-    'Relative risk ratio of systolic blood pressure (10 mmHg) onto \n CVD (2.5th to 97.5th percentiles for each RR)**',
+'Incidence rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
+'Relative risk ratio of temperature onto COPD and \n LRTI (range 1.009 to 1.218)',
+'Average temperature in cold housing (ranging from \n 16.18 to 13.82 degree Celsius)',
+'Shift of blood pressure from exposure \n to indoor cold (from 0.23 to 0.90 mmHg)',
+'Total exposure to cold housing (ranging from \n 1/6th to 1/2th of time)',
+'Cold housing by quintile of deprivation \n (ranging from 1.185 to 1.5)',
+'Relative risk ratio of systolic blood pressure (10 mmHg) onto \n CVD (2.5th to 97.5th percentiles for each RR*)',
+
 ]
 
-base = 5.649538571 
+base = 131.000
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base -	3.545369124	/2,
-    base -	3.640253191	/2,
-    base -	3.805661197	/2,
-    base -	5.619697085	/2,
-    base -	5.631154321	/2,
-    base -	5.63529104	/2,
-    base -	5.64831703	/2,
+    base -	33.900/2,
+    base -	47.400/2,
+    base -	72.600/2,
+    base -	126.000/2,
+    base -	127.000/2,
+    base -	129.000/2,
+    base -	127.000/2,
 ])
 values = np.array([
-    9.552295269,
-    9.081637989,
-    5.413618349,
-    5.654069521,
-    5.667598404,
-    5.664956711,
-    5.66264173,
+    305.000,
+    186.000,
+    199.000,
+    136.000,
+    135.000,
+    137.000,
+    131.000,
 ])
 
 values = np.subtract(values, lows)
@@ -53,8 +54,8 @@ for y, low, value in zip(ys, lows, values):
         linewidth=1,
     )
     x = base + high_width / 2
-    if x <= base + 50:
-        x = base + high_width + 50
+    if x <= base + 500:
+        x = base + high_width + 500
     plt.text(x, y, str(value), va='center', ha='center')
 
 # Draw a vertical line down the middle
@@ -71,18 +72,18 @@ axes.xaxis.set_ticks_position('top')
 plt.yticks(ys, variables)
 
 # Set the portion of the x- and y-axes to show
-plt.xlim(base - 3, base + 6)
+plt.xlim(base - 110, base + 190)
 plt.ylim(-1, len(variables))
 
 # add a legend
 import textwrap as wrap
 
-plt.plot(x, y, label="Relative risk comparing HALYs between SES1 and SES5 for 2.5th percentile of input parameter", c='red', linewidth=2.0)
+plt.plot(x, y, label="HALYs (thousands) for 2.5th percentile of input parameter", c='red', linewidth=2.0)
 leg = plt.legend(loc='best', bbox_to_anchor=(1.1, 0), fontsize='small', fancybox=True, framealpha=0, shadow=True, borderpad=1)
 for text in leg.get_texts():
     text.set_color("black")
 
-plt.plot(x, y, label="Relative risk comparing HALYs between SES1 and SES5 for 97.5th percentile of input parameter", c='Green', linewidth=2.0)
+plt.plot(x, y, label="HALYs (thousands) for 97.5th percentile of input parameter", c='Green', linewidth=2.0)
 leg = plt.legend(loc='best', bbox_to_anchor=(1.1, 0), fontsize='small', fancybox=True, framealpha=0, shadow=True, borderpad=1)
 for text in leg.get_texts():
     text.set_color("black")

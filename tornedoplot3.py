@@ -3,28 +3,34 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-    'Average temperature in cold housing (ranging from \n 16.18 to 13.82 degree Celsius) (see methods text in the paper)',
-    'Total exposure to cold housing (ranging from 1/6th to 1/2th)',
-    'Relative shift of high blood pressure from exposure \n to indoor cold (from 0.23 to 0.90 mmHg)',
-    'Relative difference in prevalence of cold housing in \n most deprived vs least deprived (1 c.f. 5) (ranging from 1.185 to 1.5)',
-    'Relative risk ratio of temperature onto depression and \n anxiety (from 1.009 to 1.218)',
+'Cold housing by quintile of deprivation \n (ranging from 1.185 to 1.5)',
+'Incidence rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
+'Relative risk ratio of temperature onto COPD and \n LRTI (range 1.009 to 1.218)',
+'Average temperature in cold housing (ranging from \n 16.18 to 13.82 degree Celsius)',
+'Shift of blood pressure from exposure \n to indoor cold (from 0.23 to 0.90 mmHg)',
+'Total exposure to cold housing (ranging from \n 1/6th to 1/2th of time)',
+'Relative risk ratio of systolic blood pressure (10 mmHg) onto \n CVD (2.5th to 97.5th percentiles for each RR)*',
 ]
 
-base = 3.439236857 
+base = 5.6830
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base -	3.422215037	/2,
-    base -	3.365664878	/2,
-    base -	3.350628843	/2,
-    base -	2.116186128	/2,
-    base -	2.716058123	/2,
+    base -	3.656032674	/2,
+    base -	3.533658009	/2,
+    base -	3.822324245	/2,
+    base -	5.641450341	/2,
+    base -	5.672978106	/2,
+    base -	5.674786056	/2,
+    base -	5.702257764	/2,
 ])
 values = np.array([
-    3.439903375,
-    3.482274792,
-    3.492733935,
-    5.394355091,
-    6.500772389,
+    9.142927379,
+    7.457085175,
+    5.772608716,
+    5.699229115,
+    5.687455531,
+    5.686511721,
+    5.70261337,
 ])
 
 values = np.subtract(values, lows)
