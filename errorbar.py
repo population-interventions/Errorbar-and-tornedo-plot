@@ -11,7 +11,6 @@ values = [
     'ACE inhibitor for adults',
     'Beta-blocker for adults',
     'Eradication of indoor cold (current)',
-    'Aspirin for adults',
     'Community heart health program',
     'TEXT ME advice',
     'Lifestyle program for adults',
@@ -32,7 +31,6 @@ y = np.array([
     9,
     10,
     11,
-    12,
 ])
 
 #ticks for the x-axis#
@@ -43,7 +41,6 @@ x = np.array([
     3.6,
     2.95,
     2.47,
-    2.0,
     1.2,
     0.15,
     0.05,
@@ -59,7 +56,6 @@ dy = np.array([[
     1.479591837,
     1.326530612,
     1.91,
-    1.683673469,
     0.637755102,
     0.076530612,
     0.010204082,
@@ -73,7 +69,6 @@ dy = np.array([[
     1.479591837,
     1.326530612,
     5.63,
-    1.683673469,
     0.637755102,
     0.076530612,
     0.010204082,
