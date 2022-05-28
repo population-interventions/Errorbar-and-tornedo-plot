@@ -1,37 +1,40 @@
 import numpy as np
 from matplotlib import pyplot as plt
 
+#20 years#
+
 # Change this to your actual data
 variables = [
-'Incidence rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
-'Relative risk ratio of temperature onto COPD and \n LRTI (range 1.009 to 1.218)',
-'Average temperature in cold housing (ranging from \n 16.18 to 13.82 degree Celsius)',
-'Shift of blood pressure from exposure \n to indoor cold (from 0.23 to 0.90 mmHg)',
-'Total exposure to cold housing (ranging from \n 1/6th to 1/2th of time)',
-'Cold housing by quintile of deprivation \n (ranging from 1.185 to 1.5)',
-'Relative risk ratio of systolic blood pressure (10 mmHg) onto \n CVD (2.5th to 97.5th percentiles for each RR*)',
-
+'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
+'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
+'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.218)',
+'Proportion of people living in cold housing (±10% SD)',
+'Increase in SBP per 1 degree Celsius less that \n 18 degreees (range 0.23 to 0.90 mmHg)',
+'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
+'Rate ratio per 10 mmHg increase in SBP for CVD*',
+'Ratio increase in prevalence of cold housing by \n quintile of deprivation (range 1.185 to 1.5)',
 ]
-
-base = 131.000
+base = 13.6
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base -	33.900/2,
-    base -	47.400/2,
-    base -	72.600/2,
-    base -	126.000/2,
-    base -	127.000/2,
-    base -	129.000/2,
-    base -	127.000/2,
+base- 2.917/2,
+base- 8.198/2,  
+base- 11.926/2,
+base- 12.274/2,
+base- 12.904/2,
+base- 13.060/2,
+base- 13.191/2,
+base- 13.363/2,
 ])
 values = np.array([
-    305.000,
-    186.000,
-    199.000,
-    136.000,
-    135.000,
-    137.000,
-    131.000,
+103.156,
+19.048, 
+23.237,
+14.992,
+14.315,
+14.210,
+14.058,
+13.886,
 ])
 
 values = np.subtract(values, lows)
@@ -72,7 +75,7 @@ axes.xaxis.set_ticks_position('top')
 plt.yticks(ys, variables)
 
 # Set the portion of the x- and y-axes to show
-plt.xlim(base - 110, base + 190)
+plt.xlim(base - 20, base + 95)
 plt.ylim(-1, len(variables))
 
 # add a legend
