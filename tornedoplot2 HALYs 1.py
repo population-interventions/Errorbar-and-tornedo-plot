@@ -5,14 +5,14 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-'Ratio increase in prevalence of cold housing by \n quintile of deprivation (range 1.185 to 1.5)',
+'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
 'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
 'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.218)',
+'Proportion of people living in cold housing (±10% SD)',
 'Increase in SBP per 1 degree Celsius less that \n 18 degreees (range 0.23 to 0.90 mmHg)',
 'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
 'Rate ratio per 10 mmHg increase in SBP for CVD*',
 'Ratio increase in prevalence of cold housing by \n quintile of deprivation (range 1.185 to 1.5)',
-'Proportion of people living in cold housing (±10% SD)',
 ]
 
 base = 29.894
