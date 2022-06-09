@@ -1,40 +1,40 @@
 import numpy as np
 from matplotlib import pyplot as plt
 
-#20 years#
+#110 years#
 
 # Change this to your actual data
 variables = [
-'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
+'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.004 to 1.107)',
 'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
-'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.218)',
+'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.006 to 1.119)',
 'Proportion of people living in cold housing (±10% SD)',
 'Increase in SBP per 1 degree Celsius less that \n 18 degreees (range 0.23 to 0.90 mmHg)',
 'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
 'Rate ratio per 10 mmHg increase in SBP for CVD*',
-'Ratio increase in prevalence of cold housing by \n quintile of deprivation (range 1.185 to 1.5)',
+'Ratio increase in prevalence of cold housing by \n quintile of deprivation (range 1.25 to 1.68)',
 ]
-base = 13.6
+base = 78.269
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-base- 2.917/2,
-base- 8.198/2,  
-base- 11.926/2,
-base- 12.274/2,
-base- 12.904/2,
-base- 13.060/2,
-base- 13.191/2,
-base- 13.363/2,
+    base -	37.875/2,
+    base -	46.654/2,
+    base -	57.947/2,
+    base -	69.693/2,
+    base -	74.708/2,
+    base -	75.516/2,
+    base -	76.309/2,
+    base -	75.659/2,
 ])
 values = np.array([
-103.156,
-19.048, 
-23.237,
-14.992,
-14.315,
-14.210,
-14.058,
-13.886,
+    184.075,
+    110.996,
+    132.548,
+    85.027,
+    82.012,
+    81.468,
+    80.484,
+    78.950,
 ])
 
 values = np.subtract(values, lows)
@@ -75,7 +75,7 @@ axes.xaxis.set_ticks_position('top')
 plt.yticks(ys, variables)
 
 # Set the portion of the x- and y-axes to show
-plt.xlim(base - 20, base + 95)
+plt.xlim(base - 50, base + 130)
 plt.ylim(-1, len(variables))
 
 # add a legend

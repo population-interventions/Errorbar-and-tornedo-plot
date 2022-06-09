@@ -3,9 +3,9 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-'Ratio increase in prevalence of cold housing by quintile \n of deprivation (range 1.185 to 1.5)',
-'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.009 to 1.218)',
-'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.218)',
+'Ratio increase in prevalence of cold housing by quintile \n of deprivation (range 1.25 to 1.68)',
+'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.004 to 1.107)',
+'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.006 to 1.119)',
 'Increase in SBP per 1 degree Celsius less than 18 degrees \n (range 0.23 to 0.90 mmHg)',
 'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
 'Rate ratio per 10 mmHg increase in SBP for CVD*',
@@ -13,28 +13,28 @@ variables = [
 'Proportion of people living in cold housing (±10% SD)'
 ]
 
-base = 4.561992585
+base = 6.178850026
 
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base-	2.853197557/2,
-    base-	3.747273853/2,
-    base-	4.05067213/2,
-    base-	4.45658167/2,
-    base-	4.481838683/2,
-    base-	4.530885996/2,
-    base-	4.556387627/2,
-    base-	4.560760593/2,
+    base -	2.78/2,
+    base -	5.39/2,
+    base -	5.49/2,
+    base -	6.12/2,
+    base -	6.14/2,
+    base -	6.16/2,
+    base -	6.15/2,
+    base -	6.15/2,
 ])
 values = np.array([
-    7.290956401,
-    7.066093668,
-    6.003329518,
-    4.658248958,
-    4.645076986,
-    4.587947054,
-    4.567542325,
-    4.563222906
+    7.07,
+    8.38,
+    7.34,
+    6.24,
+    6.23,
+    6.20,
+    6.21,
+    6.20,
 ])
 
 values = np.subtract(values, lows)
@@ -75,7 +75,7 @@ axes.xaxis.set_ticks_position('top')
 plt.yticks(ys, variables)
 
 # Set the portion of the x- and y-axes to show
-plt.xlim(base - 2, base + 3)
+plt.xlim(base - 4, base + 3)
 plt.ylim(-1, len(variables))
 
 # add a legend
