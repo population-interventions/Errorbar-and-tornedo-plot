@@ -3,37 +3,37 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-'Ratio increase in prevalence of cold housing by quintile \n of deprivation (range 1.25 to 1.68)',
 'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.007 to 1.115)',
-'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.139)',
-'Increase in SBP per 1 degree Celsius less than 18 degrees \n (range 0.23 to 0.90 mmHg)',
+'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
+'Rate ratio per 1 degree Celsius less than 18 degrees \n for COPD and LRTI (range 1.009 to 1.139)',
+'Proportion of people living in cold housing (±10% SD)',
+'Increase in SBP per 1 degree Celsius less that \n 18 degreees (range 0.23 to 0.90 mmHg)',
 'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
 'Rate ratio per 10 mmHg increase in SBP for CVD*',
-'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
-'Proportion of people living in cold housing (±10% SD)'
+'Ratio increase in prevalence of cold housing by \n quintile of deprivation (range 1.25 to 1.68)',
 ]
 
-base = 5.824787742
+base = 5.881809999
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base -	2.62/2,
-    base -	5.29/2,
-    base -	5.41/2,
-    base -	5.78/2,
-    base -	5.79/2,
-    base -	5.81/2,
-    base -	5.79/2,
-    base -	5.79/2,
+    base -	5.333148656	/2,
+    base -	5.847298191	/2,
+    base -	5.881683123	/2,
+    base -	5.874775418	/2,
+    base -	5.847031905	/2,
+    base -	5.854974737	/2,
+    base -	5.866549948	/2,
+    base -	3.268591759	/2,
 ])
 values = np.array([
-    6.66,
-    7.96,
-    6.72,
-    5.87,
-    5.86,
-    5.84,
-    5.85,
-    5.83,
+    7.229276392	,
+    5.915500189	,
+    5.891192512	,
+    5.888574585	,
+    5.917749444	,
+    5.912566178	,
+    5.89772659	,
+    10.53987036	,
 ])
 
 values = np.subtract(values, lows)

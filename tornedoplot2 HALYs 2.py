@@ -5,36 +5,36 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.007 to 1.115)',
-'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
-'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.139)',
-'Proportion of people living in cold housing (±10% SD)',
-'Increase in SBP per 1 degree Celsius less that \n 18 degreees (range 0.23 to 0.90 mmHg)',
-'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
-'Rate ratio per 10 mmHg increase in SBP for CVD*',
+'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.139)',
 'Ratio increase in prevalence of cold housing by \n quintile of deprivation (range 1.25 to 1.68)',
+'Rate ratio per 10 mmHg increase in SBP for CVD*',
+'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
+'Increase in SBP per 1 degree Celsius less that \n 18 degreees (range 0.23 to 0.90 mmHg)',
+'Proportion of people living in cold housing (±10% SD)',
+'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
+'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.007 to 1.115)',
 ]
-base = 78.269
+base = 80.59
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base -	37.875/2,
-    base -	46.654/2,
-    base -	57.947/2,
-    base -	69.693/2,
-    base -	74.708/2,
-    base -	75.516/2,
-    base -	76.309/2,
-    base -	75.659/2,
+    base -	80.51	/2,
+    base -	78.81	/2,
+    base -	78.63	/2,
+    base -	77.84	/2,
+    base -	77.03	/2,
+    base -	72.82	/2,
+    base -	48.17	/2,
+    base -	40.19	/2,
 ])
 values = np.array([
-    184.075,
-    110.996,
-    132.548,
-    85.027,
-    82.012,
-    81.468,
-    80.484,
-    78.950,
+    84.91	,
+    82.60	,
+    82.80	,
+    83.79	,
+    84.33	,
+    88.84	,
+    113.96	,
+    186.39	,
 ])
 
 values = np.subtract(values, lows)

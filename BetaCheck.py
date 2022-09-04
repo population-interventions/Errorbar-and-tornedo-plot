@@ -4,14 +4,14 @@ from scipy.stats import beta
 
 """mean=[np.log(float(input("what is your mean value?")))]"""
 """Alternatively, specify the value of mean here"""
-mean=np.log(1.58)
+mean=np.log(1.010937979)
 print("Mean", mean)
 
 def getSd(UCI, LCI):
     sigma=(np.log(UCI)-np.log(LCI))/3.96
     return sigma
 
-sd=getSd(1.72,1.44)
+sd=getSd(1.0000,1.0617)
 print("Standard Deviation:", sd)
 
 # estimate parameters of beta dist.
@@ -36,9 +36,9 @@ x = np.linspace(beta.ppf(0.01, a, b),beta.ppf(0.99, a, b), 100)
 #
 # Plot the beta distribution
 plt.figure(figsize=(7,7))
-plt.xlim(0.01, 1)
+plt.xlim(0.00001, 0.07)
 plt.plot(x, beta.pdf(x, a, b), 'r-')
 plt.title('Beta Distribution', fontsize='15')
-plt.xlabel('Values of Random Variable X (0, 1)', fontsize='15')
-plt.ylabel('Probability', fontsize='15')
+plt.xlabel('Probability', fontsize='15')
+plt.ylabel('Values of Random Variable X (0, 1)', fontsize='15')
 plt.show()

@@ -3,38 +3,38 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-'Ratio increase in prevalence of cold housing by quintile \n of deprivation (range 1.25 to 1.68)',
 'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.007 to 1.115)',
-'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.139)',
-'Increase in SBP per 1 degree Celsius less than 18 degrees \n (range 0.23 to 0.90 mmHg)',
-'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
+'Proportion of people living in cold housing (±10% SD)',
+'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.139)',
 'Rate ratio per 10 mmHg increase in SBP for CVD*',
 'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
-'Proportion of people living in cold housing (±10% SD)'
+'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
+'Increase in SBP per 1 degree Celsius less that \n 18 degreees (range 0.23 to 0.90 mmHg)',
+'Ratio increase in prevalence of cold housing by \n quintile of deprivation (range 1.25 to 1.68)',
 ]
 
-base = 6.178850026
-
+base = 6.131494392
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
+
 lows = np.array([
-    base -	2.78/2,
-    base -	5.39/2,
-    base -	5.49/2,
-    base -	6.12/2,
-    base -	6.14/2,
-    base -	6.16/2,
-    base -	6.15/2,
-    base -	6.15/2,
+    base -	5.398257994	/2,
+    base -	6.097437109	/2,
+    base -	6.122231288	/2,
+    base -	6.125036256	/2,
+    base -	6.078269086	/2,
+    base -	6.09057442	/2,
+    base -	6.113894073	/2,
+    base -	3.407245597	/2,
 ])
 values = np.array([
-    7.07,
-    8.38,
-    7.34,
-    6.24,
-    6.23,
-    6.20,
-    6.21,
-    6.20,
+    7.817584411	,
+    6.164756815	,
+    6.131537404	,
+    6.137737343	,
+    6.184760292	,
+    6.17718424	,
+    6.147789615	,
+    10.98808879	,
 ])
 
 values = np.subtract(values, lows)

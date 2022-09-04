@@ -5,37 +5,37 @@ from matplotlib import pyplot as plt
 
 # Change this to your actual data
 variables = [
-'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.007 to 1.115)',
-'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
-'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.139)',
-'Proportion of people living in cold housing (±10% SD)',
-'Increase in SBP per 1 degree Celsius less that \n 18 degreees (range 0.23 to 0.90 mmHg)',
-'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
+'Rate ratio per 1 degree Celsius less than 18 degrees  \n for COPD and LRTI (range 1.009 to 1.139)',
 'Rate ratio per 10 mmHg increase in SBP for CVD*',
+'Total exposure to cold housing (range \n 1/6th to 1/2th of time)',
+'Increase in SBP per 1 degree Celsius less that \n 18 degreees (range 0.23 to 0.90 mmHg)',
 'Ratio increase in prevalence of cold housing by \n quintile of deprivation (range 1.25 to 1.68)',
+'Proportion of people living in cold housing (±10% SD)',
+'Average temperature in cold housing (range \n 16.18 to 13.82 degree Celsius)',
+'Rate ratio per 1 degree Celsius less than 18 degrees \n for anxiety and depression (range 1.007 to 1.115)',
 ]
-base = 38.310
+base = 45.84
 
 #the order of values of 'variables' in the dataframes: 'lows' and 'values' has to match with each other#
 lows = np.array([
-    base -	11.611/2,
-    base -	22.842/2,
-    base -	33.830/2,
-    base -	34.206/2,
-    base -	37.605/2,
-    base -	37.765/2,
-    base -	37.901/2,
-    base -	37.273/2,
+    base -	45.83	/2,
+    base -	45.43	/2,
+    base -	45.29	/2,
+    base -	45.13	/2,
+    base -	44.97	/2,
+    base -	41.42	/2,
+    base -	27.37	/2,
+    base -	19.14	/2,
 ])
 values = np.array([
-    108.143,
-    54.310,
-    50.246,
-    41.721,
-    39.050,
-    38.942,
-    38.784,
-    38.602,
+    46.86	,
+    46.31	,
+    46.47	,
+    46.58	,
+    46.85	,
+    50.52	,
+    64.89	,
+    115.67	,
 ])
 
 values = np.subtract(values, lows)
