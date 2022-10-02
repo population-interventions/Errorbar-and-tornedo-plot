@@ -5,6 +5,9 @@ import numpy as np
 
 ###############################################################################
 values = [
+    'Tobacco-free generation',
+    'Tight limits on sodium',
+    'Taxing alcoholic beverages',
     'Eradication of indoor cold (current)',
     'Statin for adults',
     'Mandatory Tick program',
@@ -31,10 +34,16 @@ y = np.array([
     9,
     10,
     11,
+    12,
+    13,
+    14
 ])
 
 #ticks for the x-axis#
 x = np.array([
+    19.0,
+    10.0,
+    10.0,
     4.9,
     4.1,
     3.8,
@@ -50,6 +59,9 @@ x = np.array([
 
 #SD for error bars - preprocess the SDs - before putting in here, SE = (upper limit – lower limit) / 3.92# 
 dy = np.array([[
+    3.57,
+    1.02,
+    1.02,
     2.2,
     1.93877551,
     0.816326531,
@@ -63,7 +75,10 @@ dy = np.array([[
     0.010204082,
 ],
 [
-    4.9,
+    19.00,
+    10.00,
+    10.00,
+    5.06,
     1.93877551,
     0.816326531,
     2.040816327,

@@ -2,18 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import beta
 
-"""mean=[np.log(float(input("what is your mean value?")))]"""
-"""Alternatively, specify the value of mean here"""
-"""mean=np.log(1.010937979)"""
 mean=0.33
-print("Mean", mean)
-
-def getSd(UCI, LCI):
-    sigma=(np.log(UCI)-np.log(LCI))/3.96
-    return sigma
-
-sd=getSd(1.0000,1.0617)
-print("Standard Deviation:", sd)
+sd=0.064
 
 # estimate parameters of beta dist.
 def getAlphaBeta(mu, sigma):
@@ -37,7 +27,7 @@ x = np.linspace(beta.ppf(0.01, a, b),beta.ppf(0.99, a, b), 100)
 #
 # Plot the beta distribution
 plt.figure(figsize=(7,7))
-plt.xlim(0.00001, 0.07)
+plt.xlim(0.00001, 0.54)
 plt.plot(x, beta.pdf(x, a, b), 'r-')
 plt.title('Beta Distribution', fontsize='15')
 plt.xlabel('Probability', fontsize='15')
